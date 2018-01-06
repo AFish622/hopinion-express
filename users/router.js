@@ -133,7 +133,7 @@ router.post('/', jsonParser, (req, res) => {
 router.get('/', (req, res) => {
   return User
     .find()
-    .then(users => res.json(users.map(user => user.apiRepr())))
+    .then(users => res.status(200).json(users.map(user => user.apiRepr())))
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
