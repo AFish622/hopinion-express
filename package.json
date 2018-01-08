@@ -4,7 +4,7 @@
   "description": "Fullstack capstone",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --exit",
     "start": "node server.js"
   },
   "keywords": [
@@ -20,14 +20,17 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "brewerydb-node": "0.0.1",
+    "chai-http": "^3.0.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "fetch": "^1.1.0",
+    "g": "^2.0.1",
+    "heroku-cli": "^6.15.13",
     "import-export": "^1.0.1",
     "jsonwebtoken": "^8.1.0",
-    "mongoose": "^4.13.5",
+    "mongoose": "^4.13.8",
     "morgan": "^1.9.0",
     "node-fetch": "^1.7.3",
     "passport": "^0.4.0",
@@ -38,5 +41,9 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0"
   }
 }

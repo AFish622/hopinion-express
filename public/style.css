@@ -1,3 +1,7 @@
 h1 {
 	color: red;
 }
+
+mongo ds245687.mlab.com:45687/hopinion -u austinfisher -p 12345
+
+mongoimport -h ds245687.mlab.com:45687 -d hopinion -c hopinion -u austinfisher -p 12345 --file <input file>
