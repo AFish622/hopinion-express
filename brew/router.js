@@ -9,7 +9,7 @@ const jsonParser = bodyParser.json()
 
 const router = express.Router();
 
-const brewKey = 'd3bcff8131f00fd21f3de895b45be156';
+const brewKey = process.env.BREW_KEY;
 
 
 router.post('/breweries', jsonParser, (req, res) => {
@@ -51,32 +51,5 @@ router.post('/beers', jsonParser, (req, res) => {
 	})
 	
 })
-
-
-// using brewdb npm
-// router.post('/breweries', jsonParser, (req, res) => {
-//    	const query = req.body.query;
-// 	brewdb.search.breweries( { q: query, hasLabels: 'Y', withLocations: 'Y' }, (err, breweries) => {
-// 		res.json({
-// 			data: breweries
-// 		});
-// 	})     
-//   }
-// );
-
-// router.post('/breweries', jsonParser, (req, res) => {
-// 	const brewKey = 'd3bcff8131f00fd21f3de895b45be156';
-// 	fetch('http://api.brewerydb.com/v2/locations?locality=san+francisco&key=' + brewKey)
-//     	.then(res => {
-//         	return res.json();
-//     	})
-//     	.then(res => {
-//         	console.log("RRRR", res)
-//     	})
-//     	.catch(err => {
-//     		console.log("error", err)
-//     	})
-// })
-
 
 module.exports = { router };

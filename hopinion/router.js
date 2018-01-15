@@ -21,7 +21,7 @@ router.post('/', jsonParser, (req, res, next) => {
 
   Hopinion.create(addHopinion, (err, beer) => {
   	if (err) {
-  		console.log('ERRROR', err)
+  		console.log('ERROR', err)
   	}
   	res.json({beer: beer})
   })
@@ -38,8 +38,6 @@ router.delete('/:hopId', (req, res) => {
 	const hopinionId = req.params.hopId;
 	Hopinion.findByIdAndRemove({_id: hopinionId})
 		.then(hopionion => {
-			// did this work
-			console.log('hopppppp', hopinion)
 			res.json({hopId: hopinionId}); 
 		})
 		.catch(err => {
