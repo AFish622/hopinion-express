@@ -41,6 +41,7 @@ router.delete('/:hopId', (req, res) => {
 			res.json({hopId: hopinionId}); 
 		})
 		.catch(err => {
+			console.log('EEEERRRRRROOOOORRRRRRR', err)
 			res.status(500).send(err);
 		});
 });
@@ -50,7 +51,6 @@ router.post('/update/:hopId', jsonParser, (req, res) => {
 	const hopText = req.body.text
 	Hopinion.findOneAndUpdate({_id: hopId}, {$set: {text: hopText}}, {new: true})
 		.then(hopinion => {
-			console.log('hophop', hopinion)
 			res.json({hopinion: hopinion}); 
 		})
 		.catch(err => {
